@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "access_token": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "text1": {
+                    "description": "text1",
+                    "type": "string"
+                },
+                "text2": {
+                    "description": "text2",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "text1",
+                "text2"
+            ],
+            "type": "object"
+        }
+    }
+}

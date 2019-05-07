@@ -1,0 +1,51 @@
+{
+    "title": "Sentence Similarity",
+    "description": "Sentence Similarity.<BR />[Endpoint] https://api.apitore.com/api/53",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/apitore.com/sentenceSimilarity/0.0.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.apitore.com/api/53",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "evalUsingPOST": {
+            "main": "./lib/actions/evalUsingPOST.js",
+            "title": "Text similarity using word2vec",
+            "description": "Sentence similarity.<BR />Response<BR />&nbsp; Github: <a href=\"https://github.com/keigohtr/apitore-response-parent/tree/master/text-similarity-response\">text-similarity-response</a><BR />&nbsp; Class: com.apitore.banana.response.textsimilarity.TextSimilarityResponseEntity<BR />",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/evalUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
